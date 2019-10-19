@@ -1,5 +1,5 @@
 # coding=utf-8
-# Square equation solver v0.1.
+# Square equation solver v1.
 # Developer: Mazenkov A.
 
 import localization as lc
