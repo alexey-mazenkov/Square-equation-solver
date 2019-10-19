@@ -1,30 +1,33 @@
 # coding=utf-8
-# Square equation solver v0.1
+# Square equation solver v0.1.
 # Developer: Mazenkov A.
 
+import localization as lc
+
 # Square equation formula.
-print('Формула квадратного уравнения: ax^2 + bx + c = 0')
+print(lc.formula)
 
 while True:
 
-    a = int(input('Введите коэффициент a : '))
-    b = int(input('Введите коэффициент b : '))
-    c = int(input('Введите коэффициент c : '))
+    a = int(input(lc.a_coeff))
+    b = int(input(lc.b_coeff))
+    c = int(input(lc.c_coeff))
 
     # Calculate the discriminant.
-    d = (b ** 2) + (4 * a * c)
+    d = (b ** 2) + (-4 * a * c)
 
     # Extracting the roots of an equation.
     if d >= 0:
-        x = (-b + d ** 0.5) / 2 * a
-        x2 = (-b - d ** 0.5) / 2 * a
-        print('x1 =', x, '\nx2 =', x2)
-
+        x = (-b + d ** 0.5) / (2 * a)
+        x2 = (-b - d ** 0.5) / (2 * a)
+        print(lc.x, x, lc.x2, x2)
     else:
-        print('Корней нет')
+        print(lc.error)
 
     # Whether to continue the cycle.
     # If yes = continue, if no = break.
-    end = input('Решить ещё одно уравнение? (yes/no): ')
+    end = input(lc.cont)
     if end == 'no':
         break
+
+print(lc.thanks)
